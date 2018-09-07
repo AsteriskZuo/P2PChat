@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{98EA0543-3270-4C5D-A339-BEAFCFFC2A4E}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>Server</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(P2PChat)OutDir\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(P2PChat)IntDir\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(P2PChat)OutDir\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(P2PChat)IntDir\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../media;$(P2PChat)Include;$(P2PChat)Include\OSSupport;$(P2PChat)ThirdParty;$(P2PChat)ThirdParty\TCLAP\include;$(P2PChat)ThirdParty\libevent\include;$(P2PChat)ThirdParty\jsoncpp-1.6.5\include;$(P2PChat)ThirdParty\polarssl\include;$(BOOST);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;XML_STATIC;LUA_USE_APICHECK;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;XML_STATIC;LUA_USE_APICHECK;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalLibraryDirectories>$(P2PChat)Lib\$(Configuration);$(P2PChat)ThirdParty\MYSQL\lib;$(BOOST)stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>jsoncpp.lib;zlib.lib;ws2_32.lib;event_core.lib;event_extra.lib;Psapi.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../media;$(P2PChat)Include;$(P2PChat)Include\OSSupport;$(P2PChat)ThirdParty;$(P2PChat)ThirdParty\TCLAP\include;$(P2PChat)ThirdParty\MYSQL\include;$(P2PChat)ThirdParty\libevent\include;$(P2PChat)ThirdParty\jsoncpp-1.6.5\include;$(P2PChat)ThirdParty\polarssl\include;$(POCO)\Net\include;$(POCO)\Foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;XML_STATIC;LUA_USE_APICHECK;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;XML_STATIC;LUA_USE_APICHECK;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(P2PChat)Lib\$(Configuration);$(P2PChat)ThirdParty\MYSQL\lib;$(POCO)\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <AdditionalDependencies>jsoncpp.lib;zlib.lib;ws2_32.lib;event_core.lib;event_extra.lib;Psapi.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ClientHandle.cpp" />
+    <ClCompile Include="CommandOutput.cpp" />
+    <ClCompile Include="FastRandom.cpp" />
+    <ClCompile Include="func.cpp" />
+    <ClCompile Include="IniFile.cpp" />
+    <ClCompile Include="LeakFinder.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="MemorySettingsRepository.cpp" />
+    <ClCompile Include="OSSupport\HostnameLookup.cpp" />
+    <ClCompile Include="OSSupport\IPLookup.cpp" />
+    <ClCompile Include="OSSupport\NetworkInterfaceEnum.cpp" />
+    <ClCompile Include="OSSupport\NetworkSingleton.cpp" />
+    <ClCompile Include="OSSupport\ServerHandleImpl.cpp" />
+    <ClCompile Include="OSSupport\Socket.cpp" />
+    <ClCompile Include="OSSupport\TCPLinkImpl.cpp" />
+    <ClCompile Include="OSSupport\UDPEndpointImpl.cpp" />
+    <ClCompile Include="OverridesSettingsRepository.cpp" />
+    <ClCompile Include="Protocol\Authenticator.cpp" />
+    <ClCompile Include="Protocol\cProtocol_impl.cpp" />
+    <ClCompile Include="Protocol\Packetizer.cpp" />
+    <ClCompile Include="Root.cpp" />
+    <ClCompile Include="Server.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="StringCompression.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClientHandle.h" />
+    <ClInclude Include="CommandOutput.h" />
+    <ClInclude Include="FastRandom.h" />
+    <ClInclude Include="func.h" />
+    <ClInclude Include="IniFile.h" />
+    <ClInclude Include="LeakFinder.h" />
+    <ClInclude Include="LinearUpscale.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="MemorySettingsRepository.h" />
+    <ClInclude Include="OSSupport\HostnameLookup.h" />
+    <ClInclude Include="OSSupport\IPLookup.h" />
+    <ClInclude Include="OSSupport\Network.h" />
+    <ClInclude Include="OSSupport\NetworkSingleton.h" />
+    <ClInclude Include="OSSupport\ServerHandleImpl.h" />
+    <ClInclude Include="OSSupport\Socket.h" />
+    <ClInclude Include="OSSupport\TCPLinkImpl.h" />
+    <ClInclude Include="OSSupport\UDPEndpointImpl.h" />
+    <ClInclude Include="OverridesSettingsRepository.h" />
+    <ClInclude Include="Protocol\Authenticator.h" />
+    <ClInclude Include="Protocol\cProtocol_impl.h" />
+    <ClInclude Include="Protocol\Packetizer.h" />
+    <ClInclude Include="Protocol\Protocol.h" />
+    <ClInclude Include="Root.h" />
+    <ClInclude Include="Server.h" />
+    <ClInclude Include="setdebugnew.h" />
+    <ClInclude Include="SettingsRepositoryInterface.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringCompression.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\MCServer.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

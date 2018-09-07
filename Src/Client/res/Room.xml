@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="360,260" sizebox="4,4,4,4" caption="0,0,0,30" mininfo="360,260" maxinfo="360,260" roundcorner="4,4">
+    <VerticalLayout name="bg" bkimage="file=&apos;bg.bmp&apos; corner=&apos;5,5,5,5&apos;">
+        <VerticalLayout name="layout_main" bkimage="file=&apos;border.png&apos; corner=&apos;5,5,5,5&apos;">
+            <HorizontalLayout name="layout_tittle" height="30">
+                <Container width="5" />
+                <Label name="Label_logo" width="24" height="24" padding="0,3,0,0" bkimage="file=&apos;logo.png&apos; mask=&apos;0xffffffff&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+                <Label name="Label_tittle" text="一对多音视频" textpadding="5,0,0,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="0" />
+                <Button name="btn_mini" width="28" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="btn_mini_normal.png" hotimage="btn_mini_highlight.png" pushedimage="btn_mini_down.png" />
+                <Button name="btn_close" width="39" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="btn_close_normal.png" hotimage="btn_close_highlight.png" pushedimage="btn_close_down.png" />
+            </HorizontalLayout>
+            <VerticalLayout name="layout_work">
+                <Container height="15" />
+                <HorizontalLayout>
+                    <Container width="15" />
+                    <Control name="ctrl_video" bordersize="1" focusbordercolor="#0000FFFF" />
+                    <Container width="15" />
+                </HorizontalLayout>
+            </VerticalLayout>
+            <HorizontalLayout name="layout_bottom" height="30">
+                <Container width="15" height="30" />
+                <Label name="label_tip" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            </HorizontalLayout>
+        </VerticalLayout>
+    </VerticalLayout>
+</Window>
